@@ -11,6 +11,8 @@ import UIKit
 
 class InitialViewController: UIViewController, UIViewControllerTransitioningDelegate, UINavigationControllerDelegate {
     
+    let customInteractionAnimator = CustomInteractionAnimator()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,13 +35,19 @@ class InitialViewController: UIViewController, UIViewControllerTransitioningDele
     }
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let customNavigationAnimator = CustomNavigationAnimator()
-        
-        if operation == .push {
-            customNavigationAnimator.pushing = true
-        }
-        
-        return customNavigationAnimator
+    let customNavigationAnimator = CustomNavigationAnimator()
+    
+    if operation == .push {
+    customNavigationAnimator.pushing = true
+    customInteractionAnimator.addToViewController(viewController: toVC)
     }
+    
+    return customNavigationAnimator
+    }
+    
+    func navigationController(navigationController: UINavigationController, interactionControllerForAnimationController animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return customInteractionAnimator.transitionInProgress ? customInteractionAnimator : nil
+    }
+    
 }
 
