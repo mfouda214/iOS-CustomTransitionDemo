@@ -15,15 +15,21 @@ class CustomPresentAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        guard let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to) else {
-            return
+        guard let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to),
+            let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from) else {
+                return
         }
         
-        toViewController.view.alpha = 0
+        let toViewControllerEndFrame = transitionContext.finalFrame(for: toViewController)
+        var toViewControllerStartFrame = toViewControllerEndFrame
+        toViewControllerStartFrame.origin.y -= UIScreen.main.bounds.height
+        toViewController.view.frame = toViewControllerStartFrame
+        
         transitionContext.containerView.addSubview(toViewController.view)
         
-        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
-            toViewController.view.alpha = 1
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 10, options: .curveEaseInOut, animations: {
+            toViewController.view.frame = toViewControllerEndFrame
+            fromViewController.view.alpha = 0.5
         }, completion: {
             completed in
             transitionContext.completeTransition(true)
