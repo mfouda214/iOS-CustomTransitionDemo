@@ -13,6 +13,7 @@
 		54C1F5F81D16E267006842A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 54C1F5F71D16E267006842A7 /* Assets.xcassets */; };
 		54C1F5FB1D16E267006842A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 54C1F5F91D16E267006842A7 /* LaunchScreen.storyboard */; };
 		54C1F6071D16F395006842A7 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C1F6061D16F395006842A7 /* PhotoViewController.swift */; };
+		D456D2EA2111045800FDC1DF /* CustomPresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456D2E92111045800FDC1DF /* CustomPresentAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		54C1F5FA1D16E267006842A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		54C1F5FC1D16E267006842A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		54C1F6061D16F395006842A7 /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		D456D2E92111045800FDC1DF /* CustomPresentAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				54C1F5F01D16E267006842A7 /* AppDelegate.swift */,
 				54C1F5F21D16E267006842A7 /* InitialViewController.swift */,
 				54C1F6061D16F395006842A7 /* PhotoViewController.swift */,
+				D456D2E92111045800FDC1DF /* CustomPresentAnimator.swift */,
 				54C1F5F41D16E267006842A7 /* Main.storyboard */,
 				54C1F5F71D16E267006842A7 /* Assets.xcassets */,
 				54C1F5F91D16E267006842A7 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54C1F6071D16F395006842A7 /* PhotoViewController.swift in Sources */,
+				D456D2EA2111045800FDC1DF /* CustomPresentAnimator.swift in Sources */,
 				54C1F5F31D16E267006842A7 /* InitialViewController.swift in Sources */,
 				54C1F5F11D16E267006842A7 /* AppDelegate.swift in Sources */,
 			);
