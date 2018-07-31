@@ -26,5 +26,9 @@ class InitialViewController: UIViewController, UIViewControllerTransitioningDele
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return CustomPresentAnimator()
     }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return CustomDismissAnimator()
+    }
 }
 
