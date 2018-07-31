@@ -33,7 +33,13 @@ class InitialViewController: UIViewController, UIViewControllerTransitioningDele
     }
     
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return CustomNavigationAnimator()
+        let customNavigationAnimator = CustomNavigationAnimator()
+        
+        if operation == .push {
+            customNavigationAnimator.pushing = true
+        }
+        
+        return customNavigationAnimator
     }
 }
 
